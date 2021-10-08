@@ -35,11 +35,12 @@ function popUp(item) {
     document.body.appendChild(this.popUpEle);
 }
 
-for(let i=0; i<this.products.length; i++){
+for(var i=0; i<this.products.length; i++){
     this.products[i].popUpEle.addEventListener("click", function() {
         eles.push(new popUp(products[i]));
 
     })
+
 // If I click on the popUp div, it should hide it
 
 // Create a div for each item in the array above
