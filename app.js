@@ -24,11 +24,10 @@ let products = [
 ];
 
 // Create a div and give it a class of "popUp". Append that div to the body
-
+var eles=[];
 function popUp(item) {
 
     const  that = this;
-    this.storeProducts = [];
 
     this.popUpEle = document.createElement("div");
     this.popUpEle.classList.add("popUp")
@@ -36,6 +35,11 @@ function popUp(item) {
     document.body.appendChild(this.popUpEle);
 }
 
+for(let i=0; i<this.products.length; i++){
+    this.products[i].popUpEle.addEventListener("click", function() {
+        eles.push(new popUp(products[i]));
+
+    })
 // If I click on the popUp div, it should hide it
 
 // Create a div for each item in the array above
