@@ -24,10 +24,16 @@ var products = [
 
 // DO NOT EDIT THE ARRAY TO COMPLETE THE ASSIGNMENT
 
+// inside of each div, the product's image should be on top of the text
+
+// When Clicking on a product, it should display the popUp Menu over all the content
+
+// When clicking on the paticular product, that products image, name, and price should be displayed inside the popUp div just like it does in its own product div. No other products information shold be shown.
+
 
 // Create a div and give it a class of "popUp". Append that div to the body
 
-const box = [];
+var box = [];
 
 function fruit(item) {
     const that = this;
@@ -54,62 +60,52 @@ function fruit(item) {
     this.priceEle.innerHTML = "Price: $" + item.price;
     this.imageEle.innerHTML = "<img src = '" +item.image +"'/>";
     this.colorEle.innerHTML = item.color;
-// inside of each div, the product's image should be on top of the text
-    this.ele.appendChild(this.imageEle);
+
     this.ele.appendChild(this.nameEle);
     this.ele.appendChild(this.priceEle);
-
+    this.ele.appendChild(this.imageEle);
 
 // If I click on the popUp div, it should hide it
     document.body.appendChild(this.popUp)
     this.popUp.style.display = "none";
-// When Clicking on a product, it should display the popUp Menu over all the content
 
     this.ele.addEventListener("click", function() {
         if (item.id == 0) {
-            that.popUp.appendChild(that.imageEle);
-
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.priceEle);
+            that.popUp.appendChild(that.imageEle);
             that.popUp.style.display = "flex";
         } else if (item.id == 1) {
-            that.popUp.appendChild(that.imageEle);
-
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.priceEle);
+            that.popUp.appendChild(that.imageEle);
             that.popUp.style.display = "flex";
         } else if (item.id == 2) {
-            that.popUp.appendChild(that.imageEle);
-
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.priceEle);
+            that.popUp.appendChild(that.imageEle);
             that.popUp.style.display = "flex";
-
         }
-
-
     });
-// When clicking on the paticular product, that products image, name, and price should be displayed inside the popUp div just like it does in its own product div. No other products information shold be shown.
 
     this.popUp.addEventListener("click", function() {
 
         if (item.id == 0) {
-            that.popUp.style.display = "none";
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.imageEle);
             that.popUp.appendChild(that.priceEle);
-
+            that.popUp.style.display = "none";
         } else if (item.id == 1) {
-            that.popUp.style.display = "none";
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.imageEle);
             that.popUp.appendChild(that.priceEle);
+            that.popUp.style.display = "none";
 
         } else if (item.id == 2) {
-            that.popUp.style.display = "none";
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.imageEle);
             that.popUp.appendChild(that.priceEle);
+            that.popUp.style.display = "none";
         }
     });
 // when hovering over a product, its border color should change to the "color" of that product. Once you hover off, it should return to black
