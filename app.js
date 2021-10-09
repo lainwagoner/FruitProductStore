@@ -48,12 +48,13 @@ function fruit(item) {
 
     this.popUp = document.createElement("div")
     this.popUp.classList.add("popUp");
+
 // inside of each div, the prodcut Name and Price should be written as "Name: value" and "Price: $#.##";
     this.imageEle.src = item.image;
     this.nameEle.innerHTML = "Name: " + item.name;
     this.priceEle.innerHTML = "Price: $" + item.price;
-    //this.imageEle.innerHTML = "<img src = '" +item.image +"'/>";
     this.colorEle.innerHTML = item.color;
+
 // inside of each div, the product's image should be on top of the text
     this.ele.appendChild(this.imageEle);
     this.ele.appendChild(this.nameEle);
@@ -86,6 +87,7 @@ function fruit(item) {
             that.popUp.style.display = "flex";
 
     });
+
 // When clicking on the paticular product, that products image, name, and price should be displayed inside the popUp div just like it does in its own product div. No other products information shold be shown.
 
     this.popUp.addEventListener("click", function() {
@@ -106,8 +108,12 @@ function fruit(item) {
             that.popUp.appendChild(that.nameEle);
             that.popUp.appendChild(that.imageEle);
             that.popUp.appendChild(that.priceEle);
-
+        that.ele.appendChild(that.imageEle);
+        that.ele.appendChild(that.nameEle);
+        that.ele.appendChild(that.priceEle);
     });
+
+
 // when hovering over a product, its border color should change to the "color" of that product. Once you hover off, it should return to black
 
     this.ele.addEventListener("mouseover", function(){
